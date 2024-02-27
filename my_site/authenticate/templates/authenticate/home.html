@@ -2,4 +2,12 @@
 
 {% block content %}
 <h1> This is my home </h1>
+{% if user.is_authenticated %}
+<h5>Name: {{ user.first_name }}  {{ user.last_name }} </h5>
+<p>User: {{user.username}}</p>
+<p>Password: {{ user.password }} </p>
+<p>Email: {{ user.email }}</p>
+{% else %}
+
+{% endif %}
 {% endblock %}
